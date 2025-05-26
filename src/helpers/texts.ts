@@ -38,7 +38,7 @@ export const TEXTS = {
 
 🎁 Як і обіцяли — тримайте подарунок:
 <b>14-денний челендж “Як завжди бути наповненою зсередини”</b>
-🔗 <a href="" target="_blank">[Натисніть тут, щоб завантажити PDF]</a>
+🔗 <a href="https://drive.google.com/file/d/1wtvg6GtWxhx-g9FDZa-ExrC2EPDrKQW8/view?usp=sharing" target="_blank">[Натисніть тут, щоб завантажити PDF]</a>
 
 📬 А ближче до події ми надішлемо вам всю необхідну інформацію.
 
