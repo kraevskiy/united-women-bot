@@ -1,8 +1,8 @@
 import { Composer } from 'grammy';
-import { BotContext } from '../../types.js';
-import { TEXTS } from '../../helpers/texts.js';
-import { keyboardFullMain } from '../../core/keyboards.js';
-import { queryConstant } from '../../helpers/query.constant.js';
+import { BotContext } from '../../types';
+import { TEXTS } from '../../helpers/texts';
+import { keyboardFullMain } from '../../core/keyboards';
+import { queryConstant } from '../../helpers/query.constant';
 
 export const fullInfo = new Composer<BotContext>();
 

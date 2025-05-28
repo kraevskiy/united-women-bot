@@ -1,7 +1,7 @@
 import { Composer } from 'grammy';
 import { BotContext } from '../types.js';
-import { fullInfo } from './full_info/index.js';
-import { subscribe } from './subscribe/index.js';
+import { fullInfo } from './full_info';
+import { subscribe } from './subscribe';
 
 const callbackQuery = new Composer<BotContext>();
 

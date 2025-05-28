@@ -1,14 +1,16 @@
 import { Composer } from 'grammy';
-import { BotContext } from '../../types.js';
-import { TEXTS } from '../../helpers/texts.js';
-import { queryConstant } from '../../helpers/query.constant.js';
+import { BotContext } from '../../types';
+import { TEXTS } from '../../helpers/texts';
+import { queryConstant } from '../../helpers/query.constant';
 
 export const subscribe = new Composer<BotContext>();
 
 subscribe.callbackQuery(queryConstant.subscribe, async (ctx) => {
+	// console.log(ctx.update.callback_query.from);
 	ctx.answerCallbackQuery();
 	await ctx.reply(TEXTS.subscribeSuccess, {
 		parse_mode: 'HTML'
 	});
 	ctx.callbackQuery.message?.editReplyMarkup()
+	// await ctx.api.sendMessage(ctx.update.callback_query.from.id, "Hi!");
 })

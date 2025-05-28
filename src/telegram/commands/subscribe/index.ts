@@ -1,8 +1,7 @@
 import { Composer } from 'grammy';
-import { BotContext } from '../../types.js';
-import { keyboardMain } from '../../core/keyboards.js';
-import { TEXTS } from '../../helpers/texts.js';
-import { commandConstant } from '../../helpers/command.constant.js';
+import { BotContext } from '../../types';
+import { TEXTS } from '../../helpers/texts';
+import { commandConstant } from '../../helpers/command.constant';
 
 export const subscribe = new Composer<BotContext>();
 

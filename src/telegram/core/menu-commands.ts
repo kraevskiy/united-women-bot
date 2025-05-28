@@ -1,5 +1,5 @@
 import { BotCommand } from 'grammy/types';
-import { commandConstant } from '../helpers/command.constant.js';
+import { commandConstant } from '../helpers/command.constant';
 
 export const menuCommands: BotCommand[] = [
 	{
