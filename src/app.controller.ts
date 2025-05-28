@@ -8,6 +8,6 @@ export class AppController {
 
   @Get()
   root(@Res() res: Response) {
-    return res.render('index', { message: 'Hello world!111' });
+    return res.redirect('/auth/login');
   }
 }

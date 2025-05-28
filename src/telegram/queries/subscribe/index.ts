@@ -8,6 +8,17 @@ export const subscribe = new Composer<BotContext>();
 subscribe.callbackQuery(queryConstant.subscribe, async (ctx) => {
 	// console.log(ctx.update.callback_query.from);
 	ctx.answerCallbackQuery();
+	try {
+		if (ctx.from) {
+			const {id: userId, ...fields} = ctx.from;
+			await ctx.userService.create({
+				...fields,
+				userId
+			})
+		}
+	} catch (e) {
+		console.log(e.errorResponse);
+	}
 	await ctx.reply(TEXTS.subscribeSuccess, {
 		parse_mode: 'HTML'
 	});

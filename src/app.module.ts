@@ -7,6 +7,9 @@ import { getTelegramConfig } from './configs/telegramm.config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { getMongoConfig } from './configs/mongo.config';
 import { UsersModule } from './users/users.module';
+import { AdminsModule } from './admins/admins.module';
+import { AuthModule } from './auth/auth.module';
+import { AdminModule } from './admin/admin.module';
 
 @Module({
   imports: [
@@ -23,7 +26,10 @@ import { UsersModule } from './users/users.module';
       inject: [ConfigService],
       useFactory: getTelegramConfig
     }),
-    UsersModule
+    UsersModule,
+    AdminsModule,
+    AuthModule,
+    AdminModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -48,12 +48,12 @@ export class TelegramService {
 		await this.bot.start();
 	}
 
-	async sendMessageForAll() {
+	async sendMessageForAll(message: string) {
 		const users = await this.usersService.getAll();
 		const errorsSendingIds: number[] = [];
 		for (const user of users) {
 			try {
-				await this.bot.api.sendMessage(user.userId, TEXTS.welcome, {
+				await this.bot.api.sendMessage(user.userId, message, {
 					parse_mode: 'HTML'
 				})
 			} catch (e) {
