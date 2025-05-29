@@ -1,0 +1,26 @@
+
+
+<div class="container-fluid">
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Send message for all users</h1>
+  </div>
+  {{#if message}}
+    <div class="alert alert-primary" role="alert">
+      {{message}}
+    </div>
+    <a href="/admin/send-message" class="btn btn-primary">
+      Send next
+    </a>
+  {{else}}
+    <div class="container">
+      <form action="/admin/send-message" method="post" class="d-flex flex-column gap-3 p-5" style="min-height: 250px">
+        <div class="form-group">
+          <textarea name="message" class="form-control form-control-user" rows="10"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-user btn-block">
+          Send
+        </button>
+      </form>
+    </div>
+  {{/if}}
+</div>

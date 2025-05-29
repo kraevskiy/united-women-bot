@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Res, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Render, Res, UseGuards } from '@nestjs/common';
 import { LocalAuthGuard } from './guards/local-auth.guard';
 import { CurrentAdmin } from './current-admin.decorator';
 import { AdminDocument } from '../admins/schemas/admins.schema';
@@ -22,10 +22,13 @@ export class AuthController {
 	}
 
 	@Get('login')
+	@Render('auth/login')
 	async login(
 		@Res() res: Response
 	) {
-		res.render('login')
+		return {
+			layout: 'layouts/auth-layout'
+		}
 	}
 
 	@Post('refresh')
