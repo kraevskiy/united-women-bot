@@ -16,6 +16,12 @@ export class AdminService {
 		}
 	}
 
+	async createSendSingleMessage(body: {message: string; userId: string}) {
+		return {
+			success: await this.telegramService.sendMessageForUser(Number(body.userId), body.message)
+		}
+	}
+
 	async getUsers() {
 		return this.usersService.getAll()
 	}

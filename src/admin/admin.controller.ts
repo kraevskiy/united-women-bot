@@ -28,6 +28,16 @@ export class AdminController {
     }
   }
 
+  @Post('send-message')
+  @Render('pages/send-message')
+  async sendMessage(@Res() res: Response, @Body() body: { message: string }) {
+    await this.adminService.createSendMessage(body);
+    return {
+      layout: 'layouts/main-layout',
+      message: 'Sended'
+    };
+  }
+
   @Get('send-message')
   @Render('pages/send-message')
   async renderSendMessage(@Res() res: Response) {
@@ -36,10 +46,18 @@ export class AdminController {
     }
   }
 
-  @Post('send-message')
-  @Render('pages/send-message')
-  async sendMessage(@Res() res: Response, @Body() body: { message: string }) {
-    await this.adminService.createSendMessage(body);
+  @Get('send-single')
+  @Render('pages/send-single')
+  async renderSendSingle(@Res() res: Response) {
+    return {
+      layout: 'layouts/main-layout'
+    }
+  }
+
+  @Post('send-single')
+  @Render('pages/send-single')
+  async sendSingle(@Body() body: { message: string, userId: string }) {
+    await this.adminService.createSendSingleMessage(body);
     return {
       layout: 'layouts/main-layout',
       message: 'Sended'
