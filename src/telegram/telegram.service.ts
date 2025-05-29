@@ -88,4 +88,22 @@ export class TelegramService {
 			success: true
 		};
 	}
+
+	async sendMessageForUser(user: number, message: string) {
+		const errorsSendingIds: number[] = [];
+		try {
+			await this.bot.api.sendMessage(user, message, {
+				parse_mode: 'HTML'
+			})
+		} catch (e) {
+			errorsSendingIds.push(user)
+		}
+
+		return errorsSendingIds.length ? {
+			success: true,
+			errorsSendingIds
+		} : {
+			success: true
+		};
+	}
 }
